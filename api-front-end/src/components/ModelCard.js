@@ -2,7 +2,7 @@ import React from 'react';
 import axios from "axios";
 import {useEffect, useState} from "react";
 import { makeStyles } from '@mui/styles';
-import { Card,CardHeader, CardContent, Typography, Chip } from '@mui/material';
+import { Card,CardHeader, CardContent, CardActions , Typography, Chip, Button } from '@mui/material';
 
 const client = axios.create({
     baseURL: "http://127.0.0.1:8000/api/models" 
@@ -19,6 +19,13 @@ function ModelCard ({modelId}) {
         }
         getModel();
     }, []);
+
+    async function deleteModel(){
+        const response = await client.delete('/' + modelId, {data: {
+            "api_token": "gMzQU88OAMuwVWFSk0BcyQ6uN4ZhNE"
+          }});
+
+    }
 
     if(!model) return <>No model</>;
 
@@ -42,6 +49,9 @@ function ModelCard ({modelId}) {
                     })}
                 </div>
             </CardContent>
+            <CardActions >
+                <Button variant="outlined" color="error"  onClick={() => deleteModel()}>Delete</Button>
+            </CardActions >
         </Card>
     )
 }
