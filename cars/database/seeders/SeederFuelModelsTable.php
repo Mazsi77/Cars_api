@@ -44,5 +44,18 @@ class SeederFuelModelsTable extends Seeder
             "model_id" => 4,
             "fuel_id" =>1
         ]);
+        DB::table('fuel_model')->insert([
+            "model_id" => 4,
+            "fuel_id" =>2
+        ]);
+        DB::table('fuel_model')->insert([
+            "model_id" => 4,
+            "fuel_id" =>3
+        ]);
+        DB::table('fuel_model')->insert([
+            "model_id" => 5,
+            "fuel_id" =>1
+        ]);
     }
+
 }

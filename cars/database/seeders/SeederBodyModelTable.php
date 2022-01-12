@@ -41,5 +41,17 @@ class SeederBodyModelTable extends Seeder
             "model_id" => 4,
             "body_type_id" => 4,
         ]);
+        DB::table('body_type_model')->insert([
+            "model_id" => 4,
+            "body_type_id" => 2,
+        ]);
+        DB::table('body_type_model')->insert([
+            "model_id" => 4,
+            "body_type_id" => 3,
+        ]);
+        DB::table('body_type_model')->insert([
+            "model_id" => 5,
+            "body_type_id" => 4,
+        ]);
     }
 }
